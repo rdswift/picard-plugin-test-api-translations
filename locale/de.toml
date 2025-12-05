@@ -1,0 +1,10 @@
+"action.name" = "API-Übersetzungen testen"
+"message.test_text" = "Dies ist ein Teststring für die Übersetzung."
+
+["message.test_plurals1"]
+"one" = "Es gibt {n} Artikel."
+"other" = "Es gibt {n} Artikel."
+
+["message.test_plurals2"]
+"one" = "Es gibt {n:,} Artikel."
+"other" = "Es gibt {n:,} Artikel."

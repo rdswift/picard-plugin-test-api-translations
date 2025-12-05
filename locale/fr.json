@@ -1,4 +1,5 @@
 {
+  "action.name": "Tester les traductions de l'API",
   "message.test_text": "Ceci est une chaîne de test pour la traduction.",
   "message.test_plurals1": {
     "one": "Il y a {n} élément.",
