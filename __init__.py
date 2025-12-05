@@ -40,11 +40,11 @@ class TestTranslations(BaseAction):
     def callback(self, objs):
         test_text = self.api.tr('message.test_text', "This is a test string for translation.")
 
-        plurals = ['message.test_plurals', "There is {count} item.", "There are {count} items."]
-        test_plurals_minus = self.api.trn(*plurals, count=-1)
-        test_plurals_zero = self.api.trn(*plurals, count=0)
-        test_plurals_one = self.api.trn(*plurals, count=1)
-        test_plurals_two = self.api.trn(*plurals, count=2)
+        plurals = ['message.test_plurals', "There is {n} item.", "There are {n} items."]
+        test_plurals_minus = self.api.trn(*plurals, n=-1)
+        test_plurals_zero = self.api.trn(*plurals, n=0)
+        test_plurals_one = self.api.trn(*plurals, n=1)
+        test_plurals_two = self.api.trn(*plurals, n=2)
 
         self.api.logger.debug("Testing Test API Settings Plugin translation management.")
         self.api.logger.info(test_text)
