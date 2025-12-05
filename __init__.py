@@ -41,26 +41,60 @@ class TestTranslations(BaseAction):
         self.api.logger.debug("Testing Test API Settings Plugin translation management.")
 
         # Test simple text translation
+        self.api.logger.debug("Test simple text translation.")
         test_text = self.api.tr('message.test_text', "This is a test string for translation.")
         self.api.logger.info(test_text)
 
-        # Test plural translations
-        plurals = ['message.test_plurals', "There is {n} item.", "There are {n} items."]
-        test_plurals_minus = self.api.trn(*plurals, n=-1)
-        test_plurals_zero = self.api.trn(*plurals, n=0)
-        test_plurals_one = self.api.trn(*plurals, n=1)
-        test_plurals_two = self.api.trn(*plurals, n=2)
-        test_plurals_large = self.api.trn(*plurals, n=100000)
-
-        self.api.logger.info(test_plurals_minus)
-        self.api.logger.info(test_plurals_zero)
-        self.api.logger.info(test_plurals_one)
-        self.api.logger.info(test_plurals_two)
-        self.api.logger.info(test_plurals_large)
-
         # Test different strings with same ID
+        self.api.logger.debug("Test simple text translation for different string for an existing id.")
         another_test_text = self.api.tr('message.test_text', "A different test string for translation.")
         self.api.logger.info(another_test_text)
+
+        # Test plural translations with no number formatting
+        self.api.logger.debug("Test plurals with no number formatting.")
+        plurals1 = ['message.test_plurals1', "There is {n} item.", "There are {n} items."]
+
+        test_plurals_minus = self.api.trn(*plurals1, n=-1)
+        self.api.logger.info(test_plurals_minus)
+
+        test_plurals_zero = self.api.trn(*plurals1, n=0)
+        self.api.logger.info(test_plurals_zero)
+
+        test_plurals_one = self.api.trn(*plurals1, n=1)
+        self.api.logger.info(test_plurals_one)
+
+        test_plurals_two = self.api.trn(*plurals1, n=2)
+        self.api.logger.info(test_plurals_two)
+
+        test_plurals_large = self.api.trn(*plurals1, n=100000)
+        self.api.logger.info(test_plurals_large)
+
+        self.api.logger.debug("Test plurals with float and no number formatting.")
+        test_plurals_float = self.api.trn(*plurals1, n=10000.123)
+        self.api.logger.info(test_plurals_float)
+
+        # Test plural translations with number formatting
+        self.api.logger.debug("Test plurals with number formatting.")
+        plurals2 = ['message.test_plurals2', "There is {n:,} item.", "There are {n:,} items."]
+
+        test_plurals_minus = self.api.trn(*plurals2, n=-1)
+        self.api.logger.info(test_plurals_minus)
+
+        test_plurals_zero = self.api.trn(*plurals2, n=0)
+        self.api.logger.info(test_plurals_zero)
+
+        test_plurals_one = self.api.trn(*plurals2, n=1)
+        self.api.logger.info(test_plurals_one)
+
+        test_plurals_two = self.api.trn(*plurals2, n=2)
+        self.api.logger.info(test_plurals_two)
+
+        test_plurals_large = self.api.trn(*plurals2, n=100000)
+        self.api.logger.info(test_plurals_large)
+
+        self.api.logger.debug("Test plurals with float and number formatting.")
+        test_plurals_float = self.api.trn(*plurals2, n=10000.123)
+        self.api.logger.info(test_plurals_float)
 
 
 def enable(api: PluginApi):

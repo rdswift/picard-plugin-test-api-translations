@@ -1,7 +1,11 @@
 {
   "message.test_text": "Ceci est une chaîne de test pour la traduction.",
-  "message.test_plurals": {
+  "message.test_plurals1": {
     "one": "Il y a {n} élément.",
     "other": "Il y a {n} éléments."
+  },
+  "message.test_plurals2": {
+    "one": "Il y a {n:,} élément.",
+    "other": "Il y a {n:,} éléments."
   }
 }
