@@ -40,7 +40,6 @@ class TestTranslations(BaseAction):
 
     def __init__(self, api: PluginApi = None):
         super().__init__(api=api)
-        self.api = api
         self.setText(api.tr("action.name", self.NAME))
 
     def callback(self, objs):
