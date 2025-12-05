@@ -1,0 +1,9 @@
+uuid = "2fd3a83d-56b3-4f84-965f-d3bf147f7cee"
+name = "Test API Translations"
+authors = ["Bob Swift"]
+version = "1.0"
+description = "This plugin tests the plugin api translations."
+api = ['3.0']
+license = "GPL-2.0-or-later"
+license_url = "https://www.gnu.org/licenses/gpl-2.0.html"
+categories = ["other"]

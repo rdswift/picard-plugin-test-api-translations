@@ -1,0 +1,7 @@
+{
+  "message.test_text": "This is a test string for translation.",
+  "message.test_plurals": {
+    "one": "There is {count} item.",
+    "other": "There are {count} items."
+  }
+}
